@@ -3,3 +3,6 @@
 
 module Myrules;
 create OUT : MM1 from IN : MM;
+
+-- Helper que verifica se há estado final no SD
+helper def : hasFinalState : Boolean = MM!SD.allInstances()->asSequence().at(1).hasFinal;
