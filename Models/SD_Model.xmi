@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SD xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.example.org/sd"
+    xsi:schemaLocation="http://www.example.org/sd ../MetaModels/SD_MetaModel.ecore"
+    name="simple diagram"
+    hasFinal="false">
+  <objects name="object 1"
+      order="1"/>
+  <objects name="object 2"
+      order="2"/>
+  <objects name="object 3"
+      order="3"/>
+  <messages
+      order="1"
+      source="//@objects.0"
+      target="//@objects.1"
+      label="Message 1"/>
+  <messages
+      order="2"
+      source="//@objects.1"
+      target="//@objects.2"
+      label="Message 2"/>
+</SD>
