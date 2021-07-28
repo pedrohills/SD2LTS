@@ -1,0 +1,5 @@
+-- @path MM=/SD2LTS/MetaModels/SD_MetaModel.ecore
+-- @path MM1=/SD2LTS/MetaModels/LTS_MetaModel.ecore
+
+module Myrules;
+create OUT : MM1 from IN : MM;
