@@ -14,3 +14,14 @@ helper context MM!Object def: isFirst(): Boolean =
 	else
 		false
 	endif;
+
+-- Helper que contabiliza o número total de objetos
+helper def : totalObjects : Integer = MM!Object.allInstances()->asSequence()->size();
+
+-- Helper que verifica se o objeto iterado é o último.
+helper context MM!Object def: isLast(): Boolean =
+	if thisModule.hasFinalState and self.order = thisModule.totalObjects then
+		true
+	else
+		false
+	endif;
