@@ -6,3 +6,11 @@ create OUT : MM1 from IN : MM;
 
 -- Helper que verifica se há estado final no SD
 helper def : hasFinalState : Boolean = MM!SD.allInstances()->asSequence().at(1).hasFinal;
+
+-- Helper que verifica se objeto iterado é o primeiro.
+helper context MM!Object def: isFirst(): Boolean =
+	if self.order = 1 then
+		true
+	else
+		false
+	endif;
