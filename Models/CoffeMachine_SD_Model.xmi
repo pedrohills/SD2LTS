@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SD xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.example.org/sd"
+    xsi:schemaLocation="http://www.example.org/sd ../MetaModels/SD_MetaModel.ecore"
+    name="Coffe Machine"
+    hasFinal="false">
+  <objects name="Insert Coin"
+      order="1"/>
+  <objects name="Coffee or Tea"
+      order="2"/>
+  <objects name="Coffee Selected"
+      order="3"/>
+  <objects name="Tea Selected"
+      order="4"/>
+  <alt messages="//@messages.1 //@messages.2"/>
+  <messages
+      order="1"
+      source="//@objects.0"
+      target="//@objects.1"
+      label="Coin"/>
+  <messages
+      order="2"
+      conditionALT="prod1"
+      source="//@objects.1"
+      target="//@objects.3"
+      label="Coffee"/>
+  <messages
+      order="3"
+      conditionALT="prod2"
+      source="//@objects.1"
+      target="//@objects.2"
+      label="Tea"/>
+  <messages
+      order="4"
+      source="//@objects.2"
+      target="//@objects.0"
+      label="Dispense Tea"/>
+  <messages
+      order="5"
+      source="//@objects.3"
+      target="//@objects.0"
+      label="Dispense Coffee"/>
+</SD>
