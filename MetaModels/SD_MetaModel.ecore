@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sd" nsURI="http://www.example.org/sd" nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="SD">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" lowerBound="1"
+        upperBound="-1" eType="#//Object" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alt" upperBound="-1" eType="#//Alt"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alt">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Message"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionALT" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Object"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
