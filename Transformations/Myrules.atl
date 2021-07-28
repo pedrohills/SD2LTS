@@ -65,3 +65,21 @@ rule Object2State {
 			name <- 'State ' + Object.order.toString() + ' - ' + Object.name
 		)
 }
+
+-- Transforma a mensagem em transição
+rule Message2Transition {
+	from
+		Message : MM!Message
+	to 
+		-- Definição padrão da transformação
+		Transition : MM1!Transition (
+			name <- Message.label,
+			source <- Message.source,
+			target <- Message.target
+		)
+		do {
+			if(not Message.conditionALT.oclIsUndefined()) {
+				Transition.name <- Message.label + '[' + Message.conditionALT + ']';
+			}
+		}
+}
