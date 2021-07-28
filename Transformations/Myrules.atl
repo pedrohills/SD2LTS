@@ -83,3 +83,17 @@ rule Message2Transition {
 			}
 		}
 }
+
+-- Transforma de SD para LTS atribuindo tudo q ele tem de direito :p
+rule SD2LTS {
+	from
+		SD : MM!SD
+	to 
+		LTS : MM1!LTS (
+			name <- 'LTS - ' + SD.name,
+			transitions <- SD.messages,
+			states <- SD.objects,
+			initialstate <- thisModule.initialState,
+			finalstate <- thisModule.finalState
+		)
+}
