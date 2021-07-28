@@ -42,3 +42,16 @@ rule FirstObject2InitialState {
 			thisModule.initialState = State;
 		}
 }
+
+-- Transforma o último objeto para o estado final
+rule LastObject2FinalState {
+	from
+		Object : MM!Object (Object.isLast())	-- Faz uso do helper isLast para filtrar o último objeto do modelo de entrada
+	to 
+		State : MM1!FinalState (
+			name <- 'FinalState ' + Object.name
+		)
+		do {
+			thisModule.finalState = State;
+		}
+}
