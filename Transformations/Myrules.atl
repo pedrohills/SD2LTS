@@ -97,3 +97,5 @@ rule SD2LTS {
 			finalstate <- thisModule.finalState
 		)
 }
+
+-- Quem cativa a vitória é aquele que crê plenamente: - Eu conseguirei! - FILOSOFIA DO SUCESSO (Napoleon Hill)
