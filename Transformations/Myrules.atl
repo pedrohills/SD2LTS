@@ -55,3 +55,13 @@ rule LastObject2FinalState {
 			thisModule.finalState = State;
 		}
 }
+
+-- Transforma objeto em estado
+rule Object2State {
+	from
+		Object : MM!Object (not Object.isLast() and not Object.isFirst()) -- Usa os helpers para não filtrar o primeiro e o último obj.
+	to 
+		State : MM1!State (
+			name <- 'State ' + Object.order.toString() + ' - ' + Object.name
+		)
+}
