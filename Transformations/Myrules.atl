@@ -25,3 +25,7 @@ helper context MM!Object def: isLast(): Boolean =
 	else
 		false
 	endif;
+
+-- Inicialização do estado inicial e final como indefinido
+helper def: initialState : MM1!InitialState = OclUndefined; 
+helper def: finalState : MM1!FinalState = OclUndefined; 
