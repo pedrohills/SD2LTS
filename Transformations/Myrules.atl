@@ -28,4 +28,17 @@ helper context MM!Object def: isLast(): Boolean =
 
 -- Inicialização do estado inicial e final como indefinido
 helper def: initialState : MM1!InitialState = OclUndefined; 
-helper def: finalState : MM1!FinalState = OclUndefined; 
+helper def: finalState : MM1!FinalState = OclUndefined;
+
+-- Transforma o primeiro objeto para o estado inicial
+rule FirstObject2InitialState {
+	from
+		Object : MM!Object (Object.isFirst())	-- Faz uso do helper isFirst para filtrar o primeiro objeto do modelo de entrada
+	to 
+		State : MM1!InitialState (
+			name <- 'InitialState ' + Object.name
+		)
+		do {
+			thisModule.initialState = State;
+		}
+}
